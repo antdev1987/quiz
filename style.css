@@ -81,6 +81,8 @@ body{
 
 .quiz{
     background:white;
+    
+    /* display:none; */
     max-width: 900px;
     width:100%;
     box-shadow: 0 3px 3px -2px #0000007d;
@@ -127,7 +129,7 @@ body{
 }
 
 strong{
-    font-weight: bold;
+    font-weight:bold ;
 }
 
 .question-title .flourish {
@@ -243,6 +245,10 @@ strong{
     z-index: -1;
 }
 
+#quiz-content{
+    display: block;
+}
+
 #quiz-loader {
     display: none;
     text-align: center;
@@ -284,4 +290,97 @@ strong{
 
 .continue-button:hover {
     background: linear-gradient(#ffc107,gold);
+}
+
+
+/* the loader code */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+/* the fade code */
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+    }
+    @keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+    } 
+
+
+    .flash {
+        -webkit-animation-name: flash;
+        animation-name: flash;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        }
+        @-webkit-keyframes flash {
+        0%, 100% {
+        opacity: 1;
+        }
+        
+        50% {
+        opacity: 0;
+        }
+        }
+        
+        @keyframes flash {
+        0%, 100% {
+        opacity: 1;
+        }
+        
+        50% {
+        opacity: 0;
+        }
+        } 
+
+ 
+       .flash1{
+           opacity:1;
+           transition: opacity 1s;
+       }
+
+
+
+/* footer part */
+
+.footer {
+    color: white;
+    padding: .8em;
+    background: black;
+    margin-top: 200px;
+}
+
+.footer-content {
+    font-size: .8em;
+    font-family: 'Oswald', sans-serif;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-content a {
+    color: white;
 }
