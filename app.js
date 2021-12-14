@@ -31,61 +31,42 @@ const flashQuiz = () => {
 
 //buttun controlled by the adevent listener
 const handleQuiz = () => {
-
+    //this check if you have finished the four question and start to load animation if match
     if (counter > 2) {
         flashQuiz()
 
         setTimeout(() => {
-
             quizContent.style.display = 'none'
             quizLoader.style.display = 'block'
             flashQuiz()
         }, 800);
 
-
-
-
         setTimeout(() => {
             flashQuiz()
-
-
         }, 3500);
-
 
         setTimeout(() => {
             quizLoader.style.display = 'none'
             quizResult.style.display = 'block'
-
         }, 4500);
-
         return
-
     }
 
-
-
+    //call the animation that flash for a second it is inside that function
     flashQuiz()
 
+    //here i set a counter and I pass to next question
     setTimeout(() => {
         counter++
         currentQuestion.textContent = counter + 1
         quizyQuestion.textContent = quizBd[counter].question
-
     }, 800);
 
+    //here i remove the class with animation so i can use it again
     setTimeout(() => {
-        // quizInterior.classList.toggle('flash')
         flashQuiz()
-
     }, 1200);
-
 }
-
 
 buttons[0].addEventListener('click', handleQuiz)
 buttons[1].addEventListener('click', handleQuiz)
-
-
-console.log(buttons[0])
-console.log(quizyQuestion)
-console.log(quizInterior)
